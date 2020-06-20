@@ -1,0 +1,264 @@
+:root{
+    --max-width:1440px;
+    --primary-color:hsl(0, 100%, 68%); /*red*/
+    /* Neutral */
+    --very-dark-blue: hsl(230, 29%, 20%);
+    --dark-grayish-blue:  hsl(230, 11%, 40%);
+    --grayish-blue: hsl(231, 7%, 65%);
+    --light-grayish-blue: hsl(207, 33%, 95%);
+}
+
+*, *::before, *::after{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 18px;
+    font-family: 'Barlow', sans-serif;
+    color: var(--grayish-blue);
+   
+}
+
+body::after{
+    content: '';
+    border-bottom-left-radius: 50px;
+    background-color:var(--light-grayish-blue);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    height: 50%;
+    width: 50%;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+li > a {
+    display: inline-block;
+    margin: .5em 0;
+    padding: .5em;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--very-dark-blue);
+}
+
+main, section{
+    margin: 1em 0;
+}
+
+
+span{
+    background-color: var(--very-dark-blue);
+    color: var(--light-grayish-blue);
+    margin: .5em .8em .5em 0;
+    padding: .2em .5em;
+    border-radius: 15px;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+li{
+    list-style: none;
+}
+
+h1{
+    font-size: 2em;
+    color: var(--very-dark-blue);
+    line-height: 100%;
+}
+
+p{
+    font-size: 1em;
+    max-width: 280px;
+}
+
+.logo{
+    max-width: 25px;
+}
+
+.dot{
+    display:none;
+}
+.separator{
+    border-top: solid 1px;
+    border-top-color: var(--light-grayish-blue);
+}
+
+.login{
+    color: var(--grayish-blue);
+}
+
+.container{
+    padding: 1.5em;
+    margin: 30px auto;
+    max-width: var(--max-width);
+    overflow-x: hidden;
+}
+
+#hamburger{
+    cursor: pointer;
+}
+
+.panel-menu{
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    margin-top: 2em;
+    padding: 0 2em;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, .3);
+    z-index: 99;
+}
+
+.show{
+    display: block;
+}
+/* magia de mostar o no un elemento */
+#hamburger.show .open,
+#hamburger .close{
+    display: none;
+}
+
+#hamburger.show .close,
+#hamburger .open{
+    display: block;
+}
+
+.hero img{
+    width: 148%;
+    margin-left: -20px;
+    
+}
+
+.ff-shared{
+    font-family: 'Barlow Condensed', sans-serif; 
+    text-transform: uppercase;
+}
+
+.sf-light{
+    font-weight: 400;
+    letter-spacing: .125em;
+}
+
+.btn{
+    background-color: var(--primary-color);
+    color:var(--light-grayish-blue);
+    padding: .8em 1em;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    min-width: 160px;
+    text-align: center;
+    margin-right: 1em;
+    transition: all 0.3s ease-in;
+}
+
+.btn:hover{
+    opacity: .7;
+}
+
+.panel-button{
+    display: flex;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.col{
+    width: 100%;
+}
+
+@media screen and (min-width:800px){
+    .row{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo{
+        max-width: 100%;
+    }
+
+    #hamburger{
+        display: none;
+    }
+
+    nav{
+        justify-content: space-between;
+    }
+
+    .panel-menu{
+        margin-top: 0px;
+        box-shadow: none;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        top: 0px;
+        background-color: transparent;
+        width: 40%;
+    }
+
+    main{
+        margin-top: 3em;
+    }
+
+    li >  a:hover{
+        text-decoration: underline;
+
+    }
+
+    h1{
+        font-size: 4em;
+    }
+
+    section{
+        margin-bottom: 5em;
+    }
+
+    .separator{
+        border:none;
+    }
+
+    .container{
+        overflow: visible;
+    }
+
+    .col{
+        width: 47%;
+    }
+
+    .dot{
+        display: flex;
+        font-size: 1.3em;
+        justify-content: center;
+        align-items: center;
+        opacity: .7;
+    }
+
+    body::after{
+        height: 40%;
+    }
+
+    .space-letter{
+        letter-spacing: 5px;
+    }
+
+    .btn{
+        min-width: 230px;
+    }
+}
